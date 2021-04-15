@@ -16,14 +16,16 @@ const App = () => {
   }
 
   return (
-    <div>
+    <div style={{  color: "#fff", backgroundColor: "#E9A7FF", textAlign: "center"}}>
       <h2>give feedback</h2>
+      <div>
       <br></br>
       <Buttons value={good} setValue={setGood} name={"Good"}/>
       <Buttons value={neutral} setValue={setNeutral} name={"Neutral"}/>
       <Buttons value={bad} setValue={setBad} name={"Bad"}/>
-      <br></br>
+      <br></br></div>
       {VerEstadisticas}
+      <br></br>
     </div>
   )
 }

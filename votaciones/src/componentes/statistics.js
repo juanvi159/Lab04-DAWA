@@ -4,7 +4,7 @@ import Statistic from './statistic';
 const Statistics = (props) => { 
 
   return (
-    <div>
+    <div style={{  color: "black", backgroundColor: "#E186FF",}}>
       <h2>statistics</h2>
       <Statistic text="Good" value={props.good}/>
       <Statistic text="Neutral" value={props.neutral}/>
