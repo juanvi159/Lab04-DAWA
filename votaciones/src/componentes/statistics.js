@@ -1,15 +1,17 @@
 import React from 'react'
+import Statistic from './statistic';
 
-const Statistics = ({good,neutral,bad}) => { 
+const Statistics = (props) => { 
 
   return (
     <div>
       <h2>statistics</h2>
-      good: {good} <br/>
-      neutral: {neutral} <br/>
-      bad: {bad} <br/>
-      average: {(good+neutral+bad)/3} <br />
-      positive: {(good/(good+neutral+bad)*100)}% <br />
+      <Statistic text="Good" value={props.good}/>
+      <Statistic text="Neutral" value={props.neutral}/>
+      <Statistic text="Bad" value={props.bad}/>
+      <div>all: {(props.good+props.neutral+props.bad)}</div>
+      <div>average: {(props.good+props.neutral+props.bad)/3}</div>
+      <div>positive: {(props.good/(props.good+props.neutral+props.bad)*100)}%</div>
     </div>
   )
 }
