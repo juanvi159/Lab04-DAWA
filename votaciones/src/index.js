@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
+import Statistics from './componentes/statistics';
 
 const App = () => {
   // save clicks of each button to its own state
@@ -15,13 +16,7 @@ const App = () => {
       <button onClick={() => setNeutral(neutral + 1)}>Neutral</button>
       <button onClick={() => setBad(bad + 1)}>Bad</button>
       <br></br>
-      <h2>statistics</h2>
-      good: {good} <br/>
-      neutral: {neutral} <br/>
-      bad: {bad} <br/>
-      All: {(good+neutral+bad)}<br/>
-      average: {(good+neutral+bad)/3} <br />
-      positive: {(good/(good+neutral+bad)*100)}% <br />
+      <Statistics good={good} neutral={neutral} bad={bad}/>
     </div>
   )
 }
