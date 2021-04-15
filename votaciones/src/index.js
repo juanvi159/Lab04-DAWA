@@ -8,6 +8,12 @@ const App = () => {
   const [neutral, setNeutral] = useState(0)
   const [bad, setBad] = useState(0)
 
+  var VerEstadisticas = <div>No feedback given</div>;
+
+  if(good>=1||neutral>=1||bad>=1){
+    VerEstadisticas = <Statistics good={good} neutral={neutral} bad={bad}/>;
+  }
+
   return (
     <div>
       <h2>give feedback</h2>
@@ -16,7 +22,7 @@ const App = () => {
       <button onClick={() => setNeutral(neutral + 1)}>Neutral</button>
       <button onClick={() => setBad(bad + 1)}>Bad</button>
       <br></br>
-      <Statistics good={good} neutral={neutral} bad={bad}/>
+      {VerEstadisticas}
     </div>
   )
 }
