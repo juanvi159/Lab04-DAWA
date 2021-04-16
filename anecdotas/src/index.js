@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import ReactDOM from 'react-dom'
 
 const App = () => {
@@ -10,13 +10,27 @@ const App = () => {
     setSelected(anecdota);
     setVotos(anecdota.votos);
   }
+  var anectArray = []
+  for(var cont=0;cont<=5;cont++) {
+    anectArray.push(anecdotas[cont].votos)
+  };
+  const masVotos= anecdotas[anectArray.indexOf(Math.max(...anectArray))]
+
   return (
+    <Fragment>
     <div> 
+      <h2>La Anecdota del Dia</h2>
       <h4>{selected.anectoda}</h4>
       <h3>Tiene: {votos} Votos</h3>
       <button onClick={()=>{selected.votos++;setVotos(selected.votos)}}>Votar</button>
       <button onClick={cambiarAnecdota} >Siguiente Anecdota</button>
     </div>
+    <div>
+      <h2>Anecdota con mas Votos</h2>
+      <h4>{masVotos.anectoda}</h4>
+      <h3>Tiene: {masVotos.votos} Votos</h3>
+    </div>
+    </Fragment>
   )
 }
 
