@@ -18,14 +18,14 @@ const App = () => {
 
   return (
     <Fragment>
-    <div> 
+    <div style={{  color: "black", backgroundColor: "#E9A7FF"}}> 
       <h2>La Anecdota del Dia</h2>
       <h4>{selected.anectoda}</h4>
       <h3>Tiene: {votos} Votos</h3>
       <button onClick={()=>{selected.votos++;setVotos(selected.votos)}}>Votar</button>
       <button onClick={cambiarAnecdota} >Siguiente Anecdota</button>
     </div>
-    <div>
+    <div style={{  color: "black", backgroundColor: "#E186FF",}}>
       <h2>Anecdota con mas Votos</h2>
       <h4>{masVotos.anectoda}</h4>
       <h3>Tiene: {masVotos.votos} Votos</h3>
